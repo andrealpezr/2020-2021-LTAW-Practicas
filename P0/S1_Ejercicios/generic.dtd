@@ -1,0 +1,14 @@
+<!DOCTYPE ejer2 SYSTEM "generic.dtd">
+
+<generic>
+    <contenedor> Texto 5 </contenedor>       
+       <contenedor>
+            <contenedor> Texto 2
+                <contenedor> Texto 1 </contenedor>
+            </contenedor>
+        
+       </contenedor>
+
+        
+    </contenedor>
+</generic>

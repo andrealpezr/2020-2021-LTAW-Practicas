@@ -1,0 +1,20 @@
+
+<!DOCTYPE ejer2 SYSTEM "universidad.dtd">
+
+<universidad>
+    <escuela>
+        <nombre> ETSI Telecomunicación </nombre>
+        <grado>
+            <nombre> Ingeniería en Sistemas audiovisuales </nombre>
+            <asignatura> LTAW   </asignatura>
+            <asignatura> CSAAI   </asignatura>
+            <asignatura> ASA II  </asignatura>
+        </grado>
+        <grado>
+            <nombre>  Ingenieria de Robótica Software </nombre>
+            <asignatura> AC </asignatura>
+        </grado>    
+    </escuela>
+</universidad>
+
+
