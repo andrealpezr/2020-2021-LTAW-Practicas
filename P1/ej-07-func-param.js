@@ -16,6 +16,7 @@ function saluda() {
     mensaje("HOLA!!");
 }
 
+ 
 //-- Funcion que recibe una funcion como parametro
 //-- y simplemente la llama 
 function call(func) {
@@ -32,12 +33,14 @@ let a = suma(2,3);
 mensaje("Prueba")
 mensaje(a);
 
+
 //-- Probando la funcion call
 call(saluda);
 
+
 //-- Se le pasa como parametro una funcion
-//-- que se define dentro de los parmatros, vez de 
+//-- que se define dentro de los parametros, vez de 
 //-- fuera
 call( () => {
   mensaje("HOLI!!")
-});
+}); 
