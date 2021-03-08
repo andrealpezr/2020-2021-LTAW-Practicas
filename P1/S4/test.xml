@@ -1,8 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <!-- Esto es un comentario en una línea -->
 <!-- Varias lineas  
      otra linea
      y otra mas -->
     
+
 <pirulo>
     <mengulo attr1= "mi_atributo">
         Un mengulo
