@@ -2,7 +2,7 @@
 const http = require('http');
 const fs = require('fs');
 //-- URL no hace falta ponerla
-//--const URL = require('url').URL;
+//--const URL = require('url');
 
 //-- Definir el puerto a utilizar
 const PUERTO = 9000;
