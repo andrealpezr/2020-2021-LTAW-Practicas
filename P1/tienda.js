@@ -1,6 +1,7 @@
 //-- Importo los modulos http, fs y url
 const http = require('http');
 const fs = require('fs');
+//-- URL no hace falta ponerla
 //--const URL = require('url').URL;
 
 //-- Definir el puerto a utilizar
