@@ -22,10 +22,8 @@ setTimeout( () => {
 
 console.log("Esperando a que terminen las tareas");
 
-
-/* 
 //-- Esta función de retrollamada se invoca cada 200ms
-//-- Se guarda su identificador en la variable id par
+//-- Se guarda su identificador en la variable id para
 //-- poder quitar el temporizador con ClearInterval 
 let id = setInterval( () => {
     console.log("Tic...");
@@ -35,4 +33,4 @@ let id = setInterval( () => {
 setTimeout( ()=> {
   clearInterval(id)
   console.log("Stop!");
-}, 3000); */
+}, 3000);

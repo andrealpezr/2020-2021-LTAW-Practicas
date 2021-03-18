@@ -35,5 +35,5 @@ for (prop in objeto1) {
 const { valor, nombre } = objeto1; //-- Para obtener nuevas variables a partir de las propiedades
 
 console.log("");
-console.log("Nombre: " + nombre); LD
+console.log("Nombre: " + nombre);
 console.log("Valor: " + valor);
