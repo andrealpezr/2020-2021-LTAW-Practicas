@@ -17,6 +17,6 @@ const server = http.createServer((req, res) => {
 
 }); 
 
-server.listen(PUERTO);
+server.listen(PUERTO); // Escuchando puerto
 
 console.log("Ejemplo 5. Angry server!. Escuchando en puerto: " + PUERTO);
