@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Estructura de mi tienda -->
+<!-- El elemento raiz -->
+<tienda xmlns:t1="http://andrea.github.io/Tienda-1"
+        xmlns:t2="http://w2c.definitions/Store.es">
+
+    <!-- Dentro de mi tienda hay  
+         diferentes productos-->
+    <t1:producto> 
+        Un producto
+    </t1:producto>
+
+    <t2:producto>
+        Otro producto
+    </t2:producto>
+
+</tienda>

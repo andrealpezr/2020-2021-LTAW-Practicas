@@ -13,18 +13,11 @@ const server = http.createServer((req, res) => {
   //-- Indicamos que se ha recibido una petición
   console.log("Petición recibida!");
 
-  //-- Cabecera que indica el tipo de datos del
-  //-- cuerpo de la respuesta: Texto plano
-  res.setHeader('Content-Type', 'text/plain');
-
-  //-- Mensaje del cuerpo
-  res.write("Soy el Happy server!!\n");
-
-  //-- Terminar la respuesta y enviarla
-  res.end();
+  //-- Obtengo URL del mensaje de solicitud
+  const myURL = new URL(req.url, 'http://' + req.headers['host']);
 });
-
+  
 //-- Activar el servidor: ¡Que empiece la fiesta!
 server.listen(PUERTO);
 
-console.log("Server 5: Happy server activado!. Escuchando en puerto: " + PUERTO);
+console.log("Server tienda activado!. Escuchando en puerto: " + PUERTO);
