@@ -26,12 +26,7 @@ const server = http.createServer(function(req, res) {
   } else {
       fichName += myURL.p
   }
-  }
-
-
-
-
-
+  
 
 
 });
