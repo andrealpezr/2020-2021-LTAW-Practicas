@@ -56,15 +56,13 @@ const server = http.createServer(function(req, res) {
     //-- En caso de error (pagina no encuentrada)
     if(err) {
       res.writeHead(404, {'Content-Type': 'text/html'});
-      res.end("404 Not Found");
-      return;
+      console.log("404 Not Found");
     }else { //-- En caso de NO dar error
       res.writeHead(200, {'Content-Type': mime});
       console.log("200 OK")
     }
     
-    // Envio cabecera y el tipo de fichero solicitado
-    res.setHeader('Content-Type', type_mime);
+    // Envio el tipo de fichero solicitado
     res.write(data);
     res.end();
   });
