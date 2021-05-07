@@ -1,0 +1,27 @@
+body {
+    background-color:papayawhip;
+    font-family: fantasy;
+}
+
+.maquillaje{
+    float:right;
+    margin-right: 20%;
+    margin-top: 20%;
+
+}
+
+.mascara_ojos {
+    float:left;
+    margin-top: 43%;
+    margin-left: 20%;
+}
+
+.pintalabios {
+    float: right;
+    margin-top: 28%;
+    margin-right: 20%;
+}
+img {
+    width: 250px;
+    height: 250px;
+}
