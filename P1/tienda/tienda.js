@@ -1,12 +1,12 @@
 //-- Importo los modulos http, fs y url
 const http = require('http');
 const fs = require('fs');
-const { read } = require('node:fs');
+
 //-- URL no hace falta ponerla
 //--const URL = require('url');
 
 //-- Definir el puerto a utilizar
-const PUERTO = 9002; 
+const PUERTO = 9004; 
 
 //-- Crear el servidor
 const server = http.createServer(function(req, res) {
