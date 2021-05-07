@@ -5,7 +5,7 @@ const fs = require('fs');
 //--const URL = require('url');
 
 //-- Definir el puerto a utilizar
-const PUERTO = 9000; 
+const PUERTO = 9002; 
 
 //-- Crear el servidor
 const server = http.createServer(function(req, res) {
@@ -15,19 +15,18 @@ const server = http.createServer(function(req, res) {
 
   //-- Obtengo URL del mensaje de solicitud
   let myURL = new URL(req.url, 'http://' + req.headers['host']);
-  console.log("\nEl recurso solicitado es: " + myURL.pathname);
+  console.log("La URL del recurso solicitado es: " + myURL.href)
 
-  //-- Declaro variable para almacenar los recursos pedidos
+    //-- Declaro variable para almacenar los recursos pedidos
   let fichName = "";
 
-  //-- Obtengo el fichero
-  if(myURL.URL.pathname == '/'){
-      fichName += "tienda.html"; //-- Pagina principal
-  } else {
-      fichName += myURL.p
+  //-- Analizo la peticion
+  if(myURL.pathname == '/') { //-- http://ip:port/
+      fichName += "/tienda.html" //-- Pagina principal
+  } else { // Otra peticion
+      fichName = myURL.pathname;
   }
   
-
 
 });
   
