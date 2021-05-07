@@ -44,7 +44,7 @@ const server = http.createServer(function(req, res) {
     "jpg" : "image/jpg",
     "png" : "image/png",
     "gif" : "image/gif",
-    "ico" : "image/x-icon",
+    "ico" : "image/ico",
   }; 
 
   //-- Extraigo el tipo mime
