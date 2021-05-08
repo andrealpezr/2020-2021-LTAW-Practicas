@@ -1,27 +1,29 @@
 body {
-    background-color:papayawhip;
-    font-family: fantasy;
+    background-color: rgb(245,245,220);
+    font-family: monospace;
 }
 
-.maquillaje{
-    float:right;
-    margin-right: 20%;
-    margin-top: 20%;
-
+.principal {
+    margin-left: 38%;
+    margin-top: 2%;
 }
 
-.mascara_ojos {
-    float:left;
-    margin-top: 43%;
-    margin-left: 20%;
+.sillon{
+    float: left;
+    margin-top: 3%;
+    margin-left: 18%;
 }
 
-.pintalabios {
+.mesa{
     float: right;
     margin-top: 28%;
-    margin-right: 20%;
+    margin-right: 25%;
 }
-img {
-    width: 250px;
-    height: 250px;
+
+.lampara{
+    float: left;
+    margin-top: 21%;
+    margin-left: 18%;
 }
+
+
