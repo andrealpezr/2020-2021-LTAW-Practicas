@@ -51,8 +51,8 @@ body {
     margin-top: 2%;
     margin-left: 50px;
     display: grid;
-    grid-template-columns: [x0] 200px [x1] 320px [x2] 400px [x3] 300px [x4] 100px [x5];
-    grid-template-rows: [y0] 320px [y1] 320px [y2] 320px [y3];
+    grid-template-columns: [x0] 200px [x1] 320px [x2] 400px [x3] 400px [x4] 100px [x5];
+    grid-template-rows: [y0] 320px [y1] 380px [y2] 380px [y3];
 }
 
 
@@ -65,7 +65,7 @@ body {
 .mesa{
     grid-column: x2 / x3;
     grid-row: y1 / y2;
-    justify-self: end;
+    justify-self: center;
 }
 
 .lampara{
@@ -84,7 +84,7 @@ body {
     grid-row: y0 / y1;
     justify-self: center;
     align-self: center;
-    background:rgb(218, 218, 218);  
+    background:rgb(230, 230, 230);  
 }
 
 .descripcion_mesa{
@@ -92,7 +92,7 @@ body {
     grid-row: y1 / y2;
     justify-self: end;
     align-self: center;
-    background:rgb(218, 218, 218);   
+    background:rgb(230, 230, 230);   
 }
 
 .descripcion_lampara {
@@ -100,7 +100,7 @@ body {
     grid-row: y2 / y3;
     justify-self: center;
     align-self: center; 
-    background:rgb(218, 218, 218);   
+    background:rgb(230, 230, 230);   
 }
 
 p {

@@ -1,0 +1,82 @@
+body {
+    background-color: rgb(245,245,220);
+    font-family: 'Sans-serif';
+}
+
+.principal{
+    margin-left: 40px;
+    display: grid;
+    grid-template-columns: [x0] 200px [x1] 1fr [x2] 1fr [x3] 1fr [x4] 1fr [x5];
+    grid-template-rows: [y0] 70px [y1] 165px [y2] 165px [y3] 165px [y4] 150px [y5];
+}
+
+.inicio {
+    grid-column: x0 / x1;
+    grid-row: y0 / y1;
+}
+
+.titulo {
+    grid-column: x3 / x4;
+    grid-row: y1 / y2;
+    justify-self: center;
+}
+
+.carrito {
+    grid-column: x3 / x4;
+    grid-row: y0 / y1;
+    justify-self: end;
+}
+
+.usuario {
+    grid-column: x4 / x5;
+    grid-row: y0 / y1;
+    justify-self: start;
+}
+
+.sofa {
+    grid-column: x1 / x3;
+    grid-row: y1 / y2;
+    justify-self: center;
+}
+
+.sofa1 {
+    grid-column: x0 / x1;
+    grid-row: y1 / y2;
+    justify-self: start;
+}
+
+.sofa2 {
+    grid-column: x0 / x1;
+    grid-row: y2 / y3;
+    justify-self: start;
+}
+
+.sofa3 {
+    grid-column: x0 / x1;
+    grid-row: y3 / y4;
+    justify-self: start;
+}
+
+.datos {
+    grid-column: x3 / x4;
+    grid-row: y2 / y3;
+    justify-self: center;
+}
+
+.info{
+    grid-column: x4 / x5;
+    grid-row: y2 / y3;
+    justify-self: center;
+
+}
+
+button {
+    background-color: black;
+    color: white;
+    font-weight: 240px;
+    padding: 12px;
+}
+
+p {
+    font-size: 14px; 
+}

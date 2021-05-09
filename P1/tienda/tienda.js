@@ -57,6 +57,9 @@ const server = http.createServer(function(req, res) {
     if(err) {
       res.writeHead(404, {'Content-Type': 'text/html'});
       console.log("404 Not Found");
+      solicitud = "html/error.html";
+      data = fs.readFileSync(solicitud);
+       
     }else { //-- En caso de NO dar error
       res.writeHead(200, {'Content-Type': mime});
       console.log("200 OK")
