@@ -84,7 +84,7 @@ body {
     grid-row: y0 / y1;
     justify-self: center;
     align-self: center;
-    background:rgb(210, 210, 210);  
+    background:rgb(218, 218, 218);  
 }
 
 .descripcion_mesa{
@@ -92,7 +92,7 @@ body {
     grid-row: y1 / y2;
     justify-self: end;
     align-self: center;
-    background:rgb(210, 210, 210);  
+    background:rgb(218, 218, 218);   
 }
 
 .descripcion_lampara {
@@ -100,7 +100,7 @@ body {
     grid-row: y2 / y3;
     justify-self: center;
     align-self: center; 
-    background:rgb(210, 210, 210);   
+    background:rgb(218, 218, 218);   
 }
 
 p {
