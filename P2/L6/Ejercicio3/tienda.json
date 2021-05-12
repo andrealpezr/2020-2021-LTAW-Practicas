@@ -35,9 +35,10 @@
     {
         "pedidos": [
             {
-                "usuario": "Martita_97",
-                "producto": "sillon",
-                "cantidad": 1
+                "usuario": "",
+                "producto": "",
+                "tarjeta": "",
+                "direccion": "" 
             }
         ]
     }
