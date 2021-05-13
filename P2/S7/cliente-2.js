@@ -34,7 +34,7 @@ boton_ajax.onclick = () => {
             //-- Solo la procesamos si la respuesta es correcta
             if (m.status==200) {
 
-                //-- La respuesta es un objeto JSON
+                //-- La respuesta es un objeto JSON (obtengo productos)
                 let productos = JSON.parse(m.responseText)
 
                 //-- Meter el resultado en un párrafo html
@@ -46,7 +46,7 @@ boton_ajax.onclick = () => {
                     //-- Añadir cada producto al párrafo de visualización
                     display2.innerHTML += productos[i];
 
-                    //-- Separamos los productos por ',''
+                    //-- Separamos los productos por ','' (menos en el último)
                     if (i < productos.length-1) {
                     display2.innerHTML += ', ';
                     }

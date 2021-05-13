@@ -4,7 +4,7 @@ const http = require('http');
 const fs = require('fs');
 const PUERTO = 8080;
 
-//-- Cargar la Página de error
+//-- Cargar la Página de error, si pides algo diferente
 const ERROR = fs.readFileSync('error_page.html');
 
 //-- Cargar pagina web principal
