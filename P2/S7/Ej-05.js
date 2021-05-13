@@ -55,7 +55,7 @@ const server = http.createServer((req, res) => {
                 prodU = prod.toUpperCase();
 
                 //-- Si el producto comienza por lo indicado en el parametro
-                //-- meter este producto en el array de resultados
+                //-- meter este producto en el array de resultados (push)
                 if (prodU.startsWith(param1)) {
                     result.push(prod);
                 }
