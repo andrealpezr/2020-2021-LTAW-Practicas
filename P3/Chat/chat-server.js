@@ -6,8 +6,13 @@ const colors = require('colors');
 
 const PUERTO = 8080;
 
+//-- Variable del número de usuarios
+var users = 0;
 
-//-- Crear una nueva aplciacion web
+//-- Array del nick de los clientes
+var nickname = [];
+
+//-- Crear una nueva aplicacion web
 const app = express();
 
 //-- Crear un servidor, asosiaco a la App de express
@@ -23,7 +28,7 @@ const io = socket(server);
 //--io.send -> Envio el mensaje a todos los clientes que estan conectados, broadcast
 
 app.get('/', (req, res) => {
-  res.send('Bienvenido a mi aplicación Web!!!' + '<p><a href="/Ej-09.html">Test</a></p>');
+  res.sendFile(_dirname +  '/chat.html');
 });
 
 //-- Esto es necesario para que el servidor le envíe al cliente la
@@ -37,19 +42,55 @@ app.use(express.static('public'));
 //-- Evento: Nueva conexion recibida
 io.on('connect', (socket) => {
   
-  console.log('** NUEVA CONEXIÓN **'.yellow);
+  // Aumento el número de clientes
+  users += 1;
+
+  //-- Mensaje al usuario nuevo
+  socket.send("Bienvenido al chat");
+  
+  console.log('** NUEVO USUARIO CONECTADO: **'.black);
+  
+  //-- Obtengo el nombre del usuario
+  socket.on("nickmane", (nick) => {
+    io.send(nick.blue + " está en el chat");
+ 
+  })
 
   //-- Evento de desconexión
   socket.on('disconnect', function(){
     console.log('** CONEXIÓN TERMINADA **'.yellow);
+    users -= 1;
+
+    io.send(nick + " ha abandonado el chat");
+
   });  
+
+
 
   //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
   socket.on("message", (msg)=> {
     console.log("Mensaje Recibido!: " + msg.blue);
 
-    //-- Reenviarlo a todos los clientes conectados
-    io.send(msg);
+    //-- Analizo comandos especiales
+    if(msg.startsWith("/")) {
+      console.log("Se han pedido comandos al servidor".pink);
+      if(msg == "/help"){
+        socket.send("Los comandos soportados son:" + "<br>"
+        + "/list: Número de usuarios conectados" + "<br>"
+        + "/hello: Recibir un saludo" + "<br>" 
+        + "/date: Fecha actual" + "<br>");
+      
+      } else if (msg == "/hello") {
+        socket.send("Hola! Espero que estes disfrutando del chat");
+      }else if (msg == "/date") {
+        let fecha = new Date();
+        socket.send("Hoy es día " +  fecha.getDate() + " de " + fecha.getMonth() + " del " + fecha.getFullYear());
+      } else {
+        socket.send("Comando no disponible, utilize /help para mas informacion");
+      }
+      } else { //-- Envio el mensaje a todos
+      io.send(msg);
+    }
   });
 
 });
@@ -57,4 +98,4 @@ io.on('connect', (socket) => {
 //-- Lanzar el servidor HTTP
 //-- ¡Que empiecen los juegos de los WebSockets!
 server.listen(PUERTO);
-console.log("Escuchando en puerto: " + PUERTO);
+console.log("Abriendo chat en puerto: " + PUERTO);
