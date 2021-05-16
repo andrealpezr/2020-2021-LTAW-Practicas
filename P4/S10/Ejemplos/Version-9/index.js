@@ -9,7 +9,7 @@ const info3 = document.getElementById("info3");
 
 //-- Acceder a la API de node para obtener la info
 //-- Sólo es posible si nos han dado permisos desde
-//-- el proceso principal
+//-- el proceso principal. ES DE NODE LA API
 info1.textContent = process.arch;
 info2.textContent = process.platform;
 info3.textContent = process.cwd();

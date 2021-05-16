@@ -14,8 +14,14 @@ electron.app.on('ready', () => {
 
     //-- Crear la ventana principal de nuestra aplicación
     win = new electron.BrowserWindow({
-        width: 600,  //-- Anchura 
-        height: 400  //-- Altura
+        width: 600,   //-- Anchura 
+        height: 600,  //-- Altura
+
+        //-- Permitir que la ventana tenga ACCESO AL SISTEMA
+        webPreferences: {
+          nodeIntegration: true,
+          contextIsolation: false
+        }
     });
 
   //-- En la parte superior se nos ha creado el menu
@@ -27,8 +33,15 @@ electron.app.on('ready', () => {
   //-- La ventana es en realidad.... ¡un navegador!
   //win.loadURL('https://www.urjc.es/etsit');
 
-  //-- Cargar interfaz gráfica en HTML (pagina mia local)
+  //-- Cargar interfaz gráfica en HTML
   win.loadFile("index.html");
 
-  //-- Dos eventos
+  //-- Esperar a que la página se cargue y se muestre
+  //-- y luego enviar el mensaje al proceso de renderizado para que 
+  //-- lo saque por la interfaz gráfica
+  win.on('ready-to-show', () => {
+    console.log("HOLA?");
+    win.webContents.send('print', "MENSAJE ENVIADO DESDE PROCESO MAIN");
+  });
+
 });

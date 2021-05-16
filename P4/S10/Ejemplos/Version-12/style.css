@@ -5,15 +5,7 @@ h1 {
     border-radius: 10px;
     text-align: center;
   }
-
-.blue {
-    color: blue;
-}
-
-.red {
-  color: red;
-}
-
+  
   #display {
       border: 2px solid lightblue;
       padding: 10px;
