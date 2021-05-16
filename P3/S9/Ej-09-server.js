@@ -17,6 +17,10 @@ const io = socket(server);
 
 //-------- PUNTOS DE ENTRADA DE LA APLICACION WEB
 //-- Definir el punto de entrada principal de mi aplicación web
+
+//--Socket.send -> EL canal con ese cliente que esta conectado, envío solo ese cliente
+//--io.send -> Envio el mensaje a todos los clientes que estan conectados, broadcast
+
 app.get('/', (req, res) => {
   res.send('Bienvenido a mi aplicación Web!!!' + '<p><a href="/Ej-09.html">Test</a></p>');
 });
