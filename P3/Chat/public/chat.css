@@ -4,19 +4,31 @@ body {
 }
 
 .chat{
-    margin-left: 40px;
     display: grid;
-    grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3];
-    grid-template-rows: [y0] 7px [y1] 10px [y2] 400px [y3] 20px [y4];
-    background: rgba(199, 246, 189, 0.62);
+    grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3] 1fr [x4];
+    grid-template-rows: [y0] 80px [y1] 10px [y2] 400px [y3] 20px [y4];
+}
+
+.encabezado {
+    grid-column: x0 / x4;
+    grid-row: y0 / y2;
+    background: rgb(105, 7, 89); 
+}
+
+.h2 {
+    grid-column: x1 / x2;
+    grid-row: y1 / y2;
+    background: rgb(105, 7, 89); 
+}
+.h3 {
+    grid-column: x0 / x4;
+    grid-row: y2 / y3;
+    background: rgb(245,245,220);
+    color: white;
 }
 
 #msg_entry{
-    grid-column: x0 / x2;
-    grid-row: y3 / y4;
-}
-
-.h3 {
     grid-column: x0 / x3;
-    grid-row: y2 / y3;
+    grid-row: y3 / y4;
+    background: rgb(245,245,220);
 }

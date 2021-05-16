@@ -67,8 +67,8 @@ io.on('connect', (socket) => {
       //-- Elimino el nick del cliente
       let cliente = nickname.indexOf(nick);
       nickname.splice(cliente, 1);
+    }); 
   });  
-
   //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
   socket.on("message", (msg)=> {
     console.log("Mensaje Recibido!: " + msg.black);
