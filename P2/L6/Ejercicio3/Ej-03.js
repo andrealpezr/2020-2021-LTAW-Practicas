@@ -2,13 +2,15 @@
 
 const http = require('http');
 const fs = require('fs');
+
 const PUERTO = 8080;
 
 //-- Cargar pagina web del formulario
-const FORMULARIO = fs.readFileSync('form1.html','utf-8');
-
+const PAGINA = fs.readFileSync('index.html', 'utf-8');
+const FORMULARIO = fs.readFileSync('form2.html','utf-8');
+const COMPRA = fs.readFileSync('compra.html', 'utf-8');
 //-- HTML de la página de respuesta
-const RESPUESTA = fs.readFileSync('resp.html', 'utf-8');
+const RESPUESTA = fs.readFileSync('resp1.html', 'utf-8');
 const ERROR = fs.readFileSync('error.html', 'utf-8');
 
 //-- JSON
@@ -24,7 +26,7 @@ const server = http.createServer((req, res) => {
      
   
     //-- Por defecto entregar formulario
-    let content = FORMULARIO;
+    let content = PAGINA;
     let usuarios = 0;
   
     if (myURL.pathname == '/procesar') {
@@ -46,6 +48,29 @@ const server = http.createServer((req, res) => {
             content = ERROR;
         }
     }
+
+    // Formulario
+    if (myURL.pathname == '/form2') {
+        content = FORMULARIO;
+    }
+
+    if (myURL.pathname == '/compra') {
+        content = COMPRA;
+    }
+
+    if(myURL.pathname == '/productos') {
+
+        content = PAGINA;
+        var direccion = myURL.searchParams.get('direccion');
+        var tarjeta = myURL.searchParams.get('tarjeta');
+
+        tienda[0]["direccion"] = direccion;
+        tienda[0]["tarjeta"] = tarjeta;
+
+        let myJSON = JSON-stringify(tienda);
+        fs.writeFileSync(FICHERO_JSON, myJSON);
+    }
+
   
     //-- Enviar la respuesta
     res.setHeader('Content-Type', "text/html");
