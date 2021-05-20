@@ -27,6 +27,13 @@ const server = http.createServer((req, res) => {
     let content = FORMULARIO;
     let usuarios = 0;
   
+    //-- Analizo si hay cookies
+    if (myURL.pathname == '/') {
+        if(nombre) {
+        console.log("usuario: " + nombre);
+        content = RESPUESTA;
+        }
+    }
     if (myURL.pathname == '/procesar') {
         //-- Reemplazar las palabras claves por su valores
         //-- en la plantilla HTML
@@ -42,6 +49,7 @@ const server = http.createServer((req, res) => {
 
         if (usuarios != 0) {
             content = RESPUESTA;
+            res.setHeader('Set-Cookie', "user= " + nombre);
         }else {
             content = ERROR;
         }
