@@ -12,65 +12,36 @@
             "email": "rootuser@gmail.com"
         }
     ],
-    "products": [{
-            "name": "Zombicide",
-            "price": 89.99,
-            "description": "Un juego de zombies",
-            "photo": "product_images/zombicide.png",
-            "alternative_photo": "product_images/zombicide-back.png",
-            "link": "zombicide-detail.html",
-            "stock": 3
+    "productos": [{
+            "nombre": "Sillon",
+            "precio": 1525,
+            "descripcion": "El sillon está diseñado por Marc Krusin. ",
+            "imagen": "imagenes/sillon_krusin.jpg",
+            "link": "html/sillon.html",
+            "stock": 2
         },
         {
-            "name": "Catan",
-            "price": 36.99,
-            "description": "Un juego de agricultura",
-            "photo": "product_images/catan.jpg",
-            "alternative_photo": "product_images/catan-back.jpeg",
-            "link": "catan-detail.html",
+            "nombre": "Mesa",
+            "precio": 3893,
+            "descripcion": "Una mesa de centro JK Table ",
+            "imagen": "imagenes/mesa_alta.jpg",
+            "link": "html/mesa.html",
             "stock": 4
         },
         {
-            "name": "Virus",
-            "price": 14.99,
-            "description": "Un juego de pandemias",
-            "photo": "product_images/virus.jpg",
-            "alternative_photo": "product_images/virus-back.png",
-            "link": "virus-detail.html",
-            "stock": 10
-        },
-        {
-            "name": "Risk Star Wars",
-            "price": 29.99,
-            "description": "Un juego de conquista espacial",
-            "photo": "product_images/risk.jpg",
-            "alternative_photo": "product_images/risk-back.jpg",
-            "link": "risk-detail.html",
-            "stock": 4
-        },
-        {
-            "name": "Exploding Kittens",
-            "price": 19.99,
-            "description": "Un juego de gatitos",
-            "photo": "product_images/exploding.jpg",
-            "alternative_photo": "product_images/explodding-back.png",
-            "link": "exploding-detail.html",
-            "stock": 7
-        },
-        {
-            "name": "Harry Potter juego de mesa",
-            "price": 39.99,
-            "description": "Un juego de magia",
-            "photo": "product_images/harry.jpg",
-            "alternative_photo": "product_images/harry-back.png",
-            "link": "harry-details.html",
-            "stock": 6
+            "nombre": "Lampara",
+            "precio": 1669,
+            "descripcion": "J.T.Kalmar diseñó la lámpara",
+            "imagen": "imagenes/lampara.jpg",
+            "link": "html/lampara.html",
+            "stock": 8
         }
+
     ],
-    "orders": [{
-        "user": "nachocru",
-        "direction": "Madrid",
-        "card": "123456789",
-        "products": [{ "name": "Zombicide", "quantity": 1 }]
+    "pedidos": [{
+        "nombre": "andrealpez",
+        "direccion": "Moratalaz",
+        "Tarjeta": "1098765",
+        "productos": [{ "nombre": "Mesa", "cantidad": 1 }]
     }]
 }
