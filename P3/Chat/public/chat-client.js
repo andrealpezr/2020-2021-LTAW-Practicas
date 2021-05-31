@@ -19,6 +19,7 @@ socket.emit('nick', nick);
 
 socket.on("message", (msg)=>{
   display.innerHTML += '<p style="color:black">' + msg + '</p>';
+  musica.play();
 });
 
 //-- Al apretar el botón se envía un mensaje al servidor

@@ -61,14 +61,14 @@ io.on('connect', (socket) => {
 
   //-- Mensaje al usuario nuevo
 
-  socket.send('<p style="color:lightblue">' + msg_bienvenida + '</p');
+  socket.send('<p style="color:blue">' + msg_bienvenida + '</p');
   
   console.log('** NUEVO USUARIO CONECTADO: **'.blue);
   console.log('Usuarios conectados: '.blue);
     
   //-- Obtengo el nombre del usuario
   socket.on("nick", (nick) => {
-    io.send('<p style="color:lightblue">' + nick + " acaba de entrar en el chat");
+    io.send('<p style="color:blue">' + nick + " acaba de entrar en el chat");
  
     nickname.push(nick);
     console.log(nick + ' se acaba de conectar');
