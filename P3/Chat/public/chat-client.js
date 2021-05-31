@@ -3,6 +3,10 @@ const display = document.getElementById("display");
 const msg_entry = document.getElementById("msg_entry");
 const musica = document.getElementById("musica");
 
+//-- Escribiendo el mensaje
+const msg_escribiendo = "está escribiendo...";
+let escribir = false;
+
 //-- Crear un websocket. Se establece la conexión con el servidor
 const socket = io();
 
@@ -19,15 +23,30 @@ socket.emit('nick', nick);
 
 socket.on("message", (msg)=>{
   display.innerHTML += '<p style="color:black">' + msg + '</p>';
-  musica.play();
+  if (msg = msg_escribiendo) {
+    musica.play();
+  } else  {
+    console.log("cliente escribiendo");
+  }
+ 
 });
+
+
+//-- Al pulsar el display, se manda el mensaje de escribiendo
+msg_entry.oninput = () => {
+  if (!escribir) {
+    socket.send(msg_escribiendo);
+    escribir = true;
+  msg_entry.value = "";
+  }
+}
 
 //-- Al apretar el botón se envía un mensaje al servidor
 msg_entry.onchange = () => {
   if (msg_entry.value)
     socket.send(msg_entry.value);
+    escribir = false;
   
   //-- Borrar el mensaje actual
   msg_entry.value = "";
 }
-

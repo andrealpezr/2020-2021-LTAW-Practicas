@@ -20,6 +20,8 @@ const msg_error = 'Comando no disponible, utilize /help para mas informacion';
 
 const msg_nousers = 'Actualmente no hay users conectados';
 
+const msg_escribiendo = 'está escribiendo';
+
 
 //-- Variable del número de usuarios
 var users = 0;
@@ -64,8 +66,8 @@ io.on('connect', (socket) => {
   socket.send('<p style="color:blue">' + msg_bienvenida + '</p');
   
   console.log('** NUEVO USUARIO CONECTADO: **'.blue);
-  console.log('Usuarios conectados: '.blue);
-    
+ 
+ 
   //-- Obtengo el nombre del usuario
   socket.on("nick", (nick) => {
     io.send('<p style="color:blue">' + nick + " acaba de entrar en el chat");
@@ -117,6 +119,8 @@ io.on('connect', (socket) => {
             socket.send(msg_error);
             break;
         }
+     }  else if (msg == msg_escribiendo) {
+          socket.broadcast.emit('message', msg);
      } else { //-- Envio el mensaje a todos
         message = nick + ": " + msg;
         io.send(message);  
