@@ -6,6 +6,21 @@ const colors = require('colors');
 
 const PUERTO = 8080;
 
+
+//-- Constantes para los mensajes de comandos
+const msg_bienvenida = 'BIENVENIDO AL CHAT!!!';
+const msg_help = '/help: La lista de comandos<br>'
+                + '/list: Número de usuarios conectados<br>'
+                + '/hello: Recibir un saludo<br>'
+                + '/date: Fecha actual<br>'
+
+const msg_saludo = 'Hola! Espero que estes disfrutando del chat';
+
+const msg_error = 'Comando no disponible, utilize /help para mas informacion';
+
+const msg_nousers = 'Actualmente no hay users conectados';
+
+
 //-- Variable del número de usuarios
 var users = 0;
 
@@ -24,11 +39,10 @@ const io = socket(server);
 //-------- PUNTOS DE ENTRADA DE LA APLICACION WEB
 //-- Definir el punto de entrada principal de mi aplicación web
 
-//--Socket.send -> EL canal con ese cliente que esta conectado, envío solo ese cliente
-//--io.send -> Envio el mensaje a todos los clientes que estan conectados, broadcast
-
 app.get('/', (req, res) => {
-  res.send('Bienvenido a mi aplicación Web!!!' + '<p><a href="/chat.html">Test</a></p>');
+  let path = __dirname + '/public/chat.html';
+  res.sendFile(path);
+  console.log("Se ha solicitado el acceso al html");
 });
 
 //-- Esto es necesario para que el servidor le envíe al cliente la
@@ -46,66 +60,70 @@ io.on('connect', (socket) => {
   users += 1;
 
   //-- Mensaje al usuario nuevo
-  socket.send("Bienvenido al chat");
+
+  socket.send('<p style="color:lightblue">' + msg_bienvenida + '</p');
   
-  console.log('** NUEVO USUARIO CONECTADO: **'.black);
-  
+  console.log('** NUEVO USUARIO CONECTADO: **'.blue);
+  console.log('Usuarios conectados: '.blue);
+    
   //-- Obtengo el nombre del usuario
-  socket.on("nickmane", (nick) => {
-    io.send(nick + " está en el chat");
+  socket.on("nick", (nick) => {
+    io.send('<p style="color:lightblue">' + nick + " acaba de entrar en el chat");
  
     nickname.push(nick);
-    console.log(nickname);
+    console.log(nick + ' se acaba de conectar');
 
     //-- Evento de desconexión
     socket.on('disconnect', function(){
-      console.log('** CONEXIÓN TERMINADA **'.yellow);
+      console.log('** CONEXIÓN TERMINADA **'.red);
       users -= 1; // Resto el contador de clientes
 
-      io.send(nick + " ha abandonado el chat");
+      io.send(nick + " se ha salido del chat");
 
       //-- Elimino el nick del cliente
       let cliente = nickname.indexOf(nick);
       nickname.splice(cliente, 1);
+      console.log("Usuarios actuales: " + cliente);
     }); 
-  });  
-  //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
-  socket.on("message", (msg)=> {
-    console.log("Mensaje Recibido!: " + msg.black);
-
-    //-- Analizo comandos especiales
-    if(msg.startsWith("/")) {
-      console.log("Se han pedido comandos al servidor".pink);
+    
+    //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
+    socket.on("message", (msg)=> {
+      console.log("Mensaje Recibido!: " + msg.blue);
+      //-- Analizo comandos especiales
+      if(msg.startsWith("/")) {
+        console.log('Se han pedido comandos al servidor'.pink);
       
-      switch(msg) {
-        case "/help":
-          socket.send("Los comandos soportados son:" + "<br>"
-          + "/list: Número de usuarios conectados" + "<br>"
-          + "/hello: Recibir un saludo" + "<br>" 
-          + "/date: Fecha actual" + "<br>");
-          break;
-        case "/list":
-          msg = users;
-          socket.send("Hay " + msg + " usuarios contectados");
-          socket.send("Los usuarios son: " + nickname);
-          break;
-        case "/hello":
-          socket.send("Hola! Espero que estes disfrutando del chat");
-          break;
-        case "/date":
-          let fecha = new Date();
-          socket.send("Hoy es día " +  fecha.getDate() + " de " + fecha.getMonth() + " del " + fecha.getFullYear());
-          break;
-        default:
-          socket.send("Comando no disponible, utilize /help para mas informacion");
-          break;
-      }
-    } else { //-- Envio el mensaje a todos
-      io.send(msg);
-    };
+        switch(msg) {
+          case "/help":
+            socket.send(msg_help);
+            break;
+          case "/list":
+            if (users >= 1){
+            message = users;
+            socket.send("Hay " + message + " usuarios contectados");
+            socket.send("Los usuarios son: " + nickname);
+            } else {
+              socket.send(msg_nousers);
+            }
+            break;
+          case "/hello":
+            socket.send(msg_saludo);
+            break;
+          case "/date":
+            let fecha = new Date();
+            socket.send("Hoy es día " +  fecha.getDate() + " de " + fecha.getMonth() + " del " + fecha.getFullYear());
+            break;
+          default:
+            socket.send(msg_error);
+            break;
+        }
+     } else { //-- Envio el mensaje a todos
+        message = nick + ": " + msg;
+        io.send(message);  
+      };
+    });
   });
 });
-
 
 //-- Lanzar el servidor HTTP
 //-- ¡Que empiecen los juegos de los WebSockets!
