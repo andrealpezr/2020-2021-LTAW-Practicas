@@ -1,0 +1,76 @@
+{
+    "users": [{
+            "login": "andrealpez",
+            "password": "1234",
+            "name": "Andrea",
+            "email": "andrealpez@gmail.com"
+        },
+        {
+            "login": "root",
+            "password": "0000",
+            "name": "Root",
+            "email": "rootuser@gmail.com"
+        }
+    ],
+    "products": [{
+            "name": "Zombicide",
+            "price": 89.99,
+            "description": "Un juego de zombies",
+            "photo": "product_images/zombicide.png",
+            "alternative_photo": "product_images/zombicide-back.png",
+            "link": "zombicide-detail.html",
+            "stock": 3
+        },
+        {
+            "name": "Catan",
+            "price": 36.99,
+            "description": "Un juego de agricultura",
+            "photo": "product_images/catan.jpg",
+            "alternative_photo": "product_images/catan-back.jpeg",
+            "link": "catan-detail.html",
+            "stock": 4
+        },
+        {
+            "name": "Virus",
+            "price": 14.99,
+            "description": "Un juego de pandemias",
+            "photo": "product_images/virus.jpg",
+            "alternative_photo": "product_images/virus-back.png",
+            "link": "virus-detail.html",
+            "stock": 10
+        },
+        {
+            "name": "Risk Star Wars",
+            "price": 29.99,
+            "description": "Un juego de conquista espacial",
+            "photo": "product_images/risk.jpg",
+            "alternative_photo": "product_images/risk-back.jpg",
+            "link": "risk-detail.html",
+            "stock": 4
+        },
+        {
+            "name": "Exploding Kittens",
+            "price": 19.99,
+            "description": "Un juego de gatitos",
+            "photo": "product_images/exploding.jpg",
+            "alternative_photo": "product_images/explodding-back.png",
+            "link": "exploding-detail.html",
+            "stock": 7
+        },
+        {
+            "name": "Harry Potter juego de mesa",
+            "price": 39.99,
+            "description": "Un juego de magia",
+            "photo": "product_images/harry.jpg",
+            "alternative_photo": "product_images/harry-back.png",
+            "link": "harry-details.html",
+            "stock": 6
+        }
+    ],
+    "orders": [{
+        "user": "nachocru",
+        "direction": "Madrid",
+        "card": "123456789",
+        "products": [{ "name": "Zombicide", "quantity": 1 }]
+    }]
+}
