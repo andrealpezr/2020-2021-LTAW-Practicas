@@ -15,14 +15,33 @@
     <!-- Cargar el proceso asociado a esta página -->
     <script src="index.js" defer></script>
 
-    <title>Mi APP (version 8)</title>
+    <title>Mi APP </title>
 </head>
 <body>
     <h1>INTERFAZ GRÁFICA</h1>
-    <img src="logo-urjc.png" alt="Logo-URJC" width=150px>
-    <p>   <input type="button" value="Test" id="btn_test"> </p>
+    <div class="izq">
+        <h2>Información:</h2>
+        <ul id="lista">
+            <li>Arquitectura: <span id="info1" class="blue"></span> </li>
+            <li>Plataforma: <span id="info2" class="blue"></span> </li>
+            <li>Versión de Node: <span id="info1" class="blue"></span> </li>
+            <li>Versión de Chrome: <span id="info2" class="blue"></span></li>
+            <li>Versión de Electron: <span id="info3" class="blue"></span></li>
+        </ul>
+        <h2>Usuarios conectados</h2>
+        <p>Usuarios: <span id='print' class="black"></span> </p>
+        <h2>Dirección IP:</h2>
+        <p>Usuarios: <span id='ip' class="black"></span> </p>
+        <img src="" alt="Código QR" id="qr">
+    </div>
 
-   <p>Display:</p>
-    <p id="display"></p>
+    <div class="derecha">
+        <h2>Pruebas:</h2>
+        <input type="button" value="ENviar mensaje de prueba" id="bnt_test">
+        <h2>Mensajes</h2>
+        <p id="display"></p>
+    </div>
 </body>
-</html>
+</html>   
+
+ 
