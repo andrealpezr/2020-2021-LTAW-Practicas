@@ -15,32 +15,38 @@
     <!-- Cargar el proceso asociado a esta página -->
     <script src="index.js" defer></script>
 
-    <title>Mi APP </title>
+   
+    <title> CHAT SERVER </title>
 </head>
 <body>
-    <h1>INTERFAZ GRÁFICA</h1>
-    <div class="izq">
-        <h2>Información:</h2>
-        <ul id="lista">
-            <li>Arquitectura: <span id="info1" class="blue"></span> </li>
-            <li>Plataforma: <span id="info2" class="blue"></span> </li>
-            <li>Versión de Node: <span id="info1" class="blue"></span> </li>
-            <li>Versión de Chrome: <span id="info2" class="blue"></span></li>
-            <li>Versión de Electron: <span id="info3" class="blue"></span></li>
-        </ul>
-        <h2>Usuarios conectados</h2>
-        <p>Usuarios: <span id='print' class="black"></span> </p>
-        <h2>Dirección IP:</h2>
-        <p>Usuarios: <span id='ip' class="black"></span> </p>
-        <img src="" alt="Código QR" id="qr">
-    </div>
+    <h1>HOME CHAT (Server)</h1>
+    <div class="chat">
+        <div class="izq">
+            <h2>Información:</h2>
+            <ul id="lista">
+                <li>Arquitectura: <span id="info1" class="blue"></span> </li>
+                <li>Plataforma: <span id="info2" class="blue"></span> </li>
+                <li>Versión de Node: <span id="info4" class="blue"></span> </li>
+                <li>Versión de Chrome: <span id="info5" class="blue"></span></li>
+                <li>Versión de Electron: <span id="info6" class="blue"></span></li>
+            </ul>
+            <h2>Usuarios conectados</h2>
+            <p> Número de usu
+                arios conectados: <span id="info_user" class="blue"></span></p>
+            <h2>Dirección IP:</h2>
+            <p>IP: <span id='info7' class="blue"></span> </p>
+        </div>
 
-    <div class="derecha">
-        <h2>Pruebas:</h2>
-        <input type="button" value="ENviar mensaje de prueba" id="bnt_test">
-        <h2>Mensajes</h2>
-        <p id="display"></p>
-    </div>
+        <div class="derecha">
+            <h2>Pruebas:</h2>
+            <button id="btn_test">Mensaje de prueba</button>
+            <p id="display"></p>
+            <div class="mensajes" id="texto">
+             <h2>Mensajes</h2>
+             <p> <span id="textos" class="red"></span></p><br>
+            </div>
+        </div>
+    <div>
 </body>
 </html>   
 

@@ -1,0 +1,40 @@
+
+body {
+  background-color: rgb(245,245,220);
+  font-family: 'Sans-serif';
+}
+
+.chat{
+  display: grid;
+  grid-template-columns: [x0] 1fr [x1] 1fr [x2];
+  grid-template-rows: [y0] 60px [y1] 10px [y2];
+
+}
+h1 {
+    width: 93%;
+    padding: 20px;
+    background-color: rgb(187, 42, 255);
+    border-radius: 10px;
+    text-align: center;
+    grid-column: x0 / x2;
+    grid-row: y0 / y1;
+}
+
+.izq {
+  grid-column: x0 / x2;
+  grid-row: y1 / y2;
+}
+
+.derecha {
+  grid-column: x1 / x2;
+  grid-row: y1 / y2;
+}
+
+input {
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: grey;
+}
+
+
+
