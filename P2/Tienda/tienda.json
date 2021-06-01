@@ -2,13 +2,13 @@
     "users": [{
             "login": "andrealpez",
             "password": "1234",
-            "name": "Andrea",
+            "nombre": "Andrea",
             "email": "andrealpez@gmail.com"
         },
         {
             "login": "root",
             "password": "0000",
-            "name": "Root",
+            "nombre": "Root",
             "email": "rootuser@gmail.com"
         }
     ],
@@ -35,13 +35,16 @@
             "imagen": "imagenes/lampara.jpg",
             "link": "html/lampara.html",
             "stock": 8
+        },
+        {
+            "nombre": "Sofa",
+            "precio": 5030,
+            "descripcion": "Es un sofá con tapicería lujosa ",
+            "imagen": "imagenes/sofa.jpg",
+            "link": "html/sofa.html",
+            "stock": 4
         }
-
     ],
-    "pedidos": [{
-        "nombre": "andrealpez",
-        "direccion": "Moratalaz",
-        "Tarjeta": "1098765",
-        "productos": [{ "nombre": "Mesa", "cantidad": 1 }]
-    }]
+    "pedidos": [
+    ]
 }
