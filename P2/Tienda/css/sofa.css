@@ -21,7 +21,7 @@ body {
     justify-self: center;
 }
 
-.carrito {
+#carrito {
     grid-column: x3 / x4;
     grid-row: y0 / y1;
     justify-self: end;
